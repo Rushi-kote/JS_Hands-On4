@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandsOn4</title>
+</head>
+
+<body>
+    <h1 style="text-align:center ;">Arrays</h1>
+    <hr>
+    <h3>Q1.Find the Product. <br>
+        Write a program that takes an array as input from the user and find out the product of the elements.</h3>
+    <pre>
+const Find_Prod = (array, N) => 
+{
+let prod=1;
+for(let i=0;i< N;i++){
+prod*=array[i];
+}
+return prod;
+};
+    </pre>
+
+
+    <h3>Q2. Find the Sum. <br>
+        Write a program which takes an array as input from the user and find out the sum of the array elements.</h3>
+    <pre>
+const Find_Sum = (array, N) => 
+{
+    let sum=0;
+    for(let i=0;i< N;i++){
+    sum+=array[i];
+    }
+    return sum;  
+
+};
+</pre>
+    <h3>Q3. Count Occurrences <br>
+        You are given an array A containing N integer elements and an integer K, and your task is to return the count of
+        occurrences of K in array A
+        .</h3>
+    <pre>
+
+const findCount = (N, K, Arr) => 
+{
+    let count=0;
+    for(let i=0;i< N;i++){
+    if(Arr[i]==K){
+        count++;
+    }
+    }
+    return count;
+};
+    
+
+    </pre>
+    <h3>Q4. Even Odd <br>
+        You are given an array
+        A
+        containing
+        N
+        integer elements, and your task is to return an array
+        B
+
+        (
+        having a size equal to
+        2
+        )
+        , where
+        B
+        [
+        0
+        ]
+        contains the sum of all even elements of array A and
+        B
+        [
+        1
+        ]
+        has the sum of all odd elements of the array
+        A
+        .</h3>
+    <pre>
+
+const findEvenOdd = (N, Arr) => 
+{
+    let array=[0,0];
+    for(let i=0;i< N;i++){
+    if(Arr[i]%2===0){
+        array[0]+=Arr[i];
+    }
+    else{
+        array[1]+=Arr[i];
+    }
+    }
+    return array;
+};
+
+    </pre>
+
+    <h3>Q5. Find whether the number is present or not <br>
+        Write a program which takes an array as input from the user and a number.
+        Check whether the number is present or not.</h3>
+    <pre>
+
+const Find_Num = (array,N,M) => 
+{
+  for(let i=0;i< N;i++){
+    if(array[i]==M){
+      return 'YES';
+    }
+  }
+   return 'NO';
+};
+ 
+
+        </pre>
+
+    <h3>Q6. Higher Age <br>
+        You are given an array
+        A
+        containing the age of persons in your locality, and your task is to find and return an array containing the age
+        of persons that are over
+        18
+
+        (
+        18
+        included
+        )
+    .</h3>
+    <pre>
+        
+const highAge = (N, Arr) => 
+{
+  let arr=[];
+  let j=0;
+  for(let i=0;i<N;i++){
+    if(Arr[i]>17){
+      arr[j++]=Arr[i];
+    }
+  }
+  return arr;
+};
+ 
+
+    </pre>
+    <h3>Q7.Increment the Array Elements <br>
+        You are provided an array of integers and you have to increment all array elements by 1 and then print whole array.</h3>
+
+    <pre>
+        
+const Inc_Arr = (array,N) => 
+{
+  let string='';
+  for(let i=0;i< N;i++){
+    array[i]+=1;
+    string=string+array[i]+' ';
+  }
+  console.log(string);
+  
+};
+    </pre>
+
+    <h3>Q8.Pass or Fail <br>
+        You are given an array 
+        A
+         containing the maths marks of students in your class, and your task is to determine if all the students pass in your class or not. A student is declared pass if his maths marks are greater than or equal to 
+        32
+        .
+        
+        If all the students pass in your class, return "YES" (without quotes); otherwise, return "NO" (without quotes).
+    </h3>
+    <pre>
+        
+const isAllPass = (N, Arr) => 
+{
+  for(let i=0;i< N;i++){
+    if(Arr[i]< 32){
+      return 'NO';
+    }
+  }
+  return 'YES';
+};
+ 
+
+    </pre>
+
+    <h3>Q9.Unique Color Shirt <br>
+        Prepbuddy is very tasteful of clothes. 
+        He has 
+        N
+         numbers of shirts hanging in the hanger in his wardrobe.
+        Prepbuddy likes to wear different colored clothes. So, whenever he see there are two or more shirts with the same color, he removes all the shirt of that color from his wardrobe. Now, he wants to know how many 
+        M
+         unique color shirts are left in the wardrobe. 
+        Prepbuddy wants you to find 
+        M
+    .</h3>
+    <pre>
+        
+function Unique_Shirts (arr,N) {
+    let count=0;
+    for(let i=0;i< N;i++){
+      let flag=0;
+      for(let j=0;j< N;j++){
+        if(i==j){
+          continue;
+        }
+        if(arr[i]==arr[j]){
+          flag=1;
+          break;
+        }
+      }
+      if(flag===0){
+        count++;
+      }
+    }
+    return count;
+  }
+  
+  
+    </pre>
+
+    <h3>Q10. Min and Max <br>
+        Congratulations on making up to this question. Let us give you a fairly simple array problem to solve. If you know how to iterate through the array, you will easily be able to solve this.
+        The problem statement is simple- given 
+        N
+         elements, find the minimum and maximum numbers among those elements.
+    </h3>
+    <pre>
+         
+ function arrayMin(arr) {
+    let min=arr[0];
+    for(let i=0;i< arr.length;i++){
+      if(min>arr[i]){
+        min=arr[i];
+      }
+    }
+    return min;
+  
+  }
+  
+  function arrayMax(arr) {
+     let max=arr[0];
+    for(let i=0;i< arr.length;i++){
+      if(max< arr[i]){
+        max=arr[i];
+      }
+    }
+    return max;
+  
+  }
+  
+  
+    </pre>
+</body>
+
+</html>
